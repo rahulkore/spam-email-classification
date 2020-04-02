@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<link rel="stylesheet" href="/static/style1.css" type="text/css">
+
+
+
+		<style>
+
+		*{
+			background-color:#F5F5F5;
+		}
+			.dropbtn {
+		  background-color: #DCDCDC
+		  color: black;
+
+		  padding: 16px;
+		  font-size: 16px;
+		  font-style:bold;
+		  border: none;
+		  cursor: pointer;
+		}
+
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+		  float:right;
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f9f9f9;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown-content a:hover {background-color: grey}
+
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}
+
+		.dropdown:hover .dropbtn {
+		  background-color: grey;
+
+
+
+		.tablink {
+			background-color: #555;
+			color: white;
+			margin:15px;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			font-size: 10px;
+			width: 34%;
+		  }
+
+		.tablink:hover {
+			background-color: #777;
+		  }
+
+		  /* Style the tab content (and add height:100% for full page content) */
+		.tabcontent {
+			color: black;
+			display: none;
+			padding: 100px 20px;
+			height: 100%;
+			width: 100%
+		  }
+
+		  #Home {background-color: None;}
+		  #News {background-color: None;}
+				}
+		</style>
+	</head>
+
+
+
+	<body>
+
+<div style="background-color:#3498DB;height:100px;width:100%;margin-top:-50px;position:relative">
+		<div style="margin-top:5px">
+			<h2 style="background-color:lightblue;margin-top:50px">Fraud Filter API</h2>
+		</div>
+
+		<div class="dropdown" style="margin-top:-10px">
+			<button class="dropbtn">View Stats</button>
+			<div class="dropdown-content">
+				<a href="/heatmaps">Heat Maps</a>
+				<a href="/bargraph">Bar graph</a>
+			</div>
+		</div>
+</div>
+		<div class="request-container" style="float:left;width:30%;background-color:#DCDCDC;margin-left:0px;margin-top:100px;height:70%;border-style:solid">
+			<!-- <div class="login-screen" style="float:left"> -->
+				<!-- <div class="app-title" style="float:left"> -->
+					<!-- <h1>Cloud computing</h1> -->
+				<!-- </div> -->
+				<div class="request-message" style="margin-top:-12px;background-color:#DCDCDC">
+					<p style="font-style:bold;background-color:#DCDCDC">Request Body</p>
+					<p style="font-style:italic;background-color:#DCDCDC">Parameters:{senders-ip,email-body}</p>
+				</div>
+
+				<div class="request-entry" style="float:left;width:99%;margin-top:-10px">
+					<form action="/after_mail_entry" method="POST">
+						<input style="height:100px;width:100%;border-style: groove" type="text" value="" class="ip-entry" name="ip" placeholder="Enter the senders IP address:">
+						<br>
+						<input style="height:100px;width:100%;border-style: groove" type="text" value="" class="mail-entry" name="email" placeholder="Enter the mail here to test:">
+						<br>
+						<input type="submit" value="Check Email" class="btn btn-primary btn-large btn-block" style="margin-top:5px;width:100%">
+					</form>
+				</div>
+		</div>
+
+
+	<div class="response-container" style="float:left;width:30%;background-color:#DCDCDC;margin-left:15px;margin-top:100px;height:100%;border-style:solid">
+		<div class="" style="width:100%;background-color:#DCDCDC;height:103px">
+			<p style="background-color:#DCDCDC;margin-left:20px;;margin-top:25px;font-style:bold">Response</p>
+		</div>
+			<div class="login-form" style="float:left;width:99%">
+				<div class="control-group">
+					<input style="height:200px;width:100%" type="text" class="login-field" value=""  name="value">
+					<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="code-snippet-container" style="float:left;width:30%;background-color:#DCDCDC;margin-left:15px;margin-top:100px;height:360px;border-style:solid">
+			<div  style="background-color:#DCDCDC">
+				<h2 style="background-color:#DCDCDC;margin-left:5px">Code Snippets </h2>
+			</div>
+			<br>
+			<button class="tablink" style="margin-left:10px;width:80px;height:40px;font-style:italic" onclick="openPage('Home', this, 'green')">Python</button>
+			<button class="tablink" style="margin-left:10px;width:80px;height:40px;font-style:italic"onclick="openPage('News', this, 'green')" id="defaultOpen">Java</button>
+
+
+			<div id="Home" class="tabcontent" >
+				<p style="font-size:18.36px;font-style:italic">
+					import requests<br>
+					url = "https://steel-earth-269715.appspot.com/register/"
+					email_data = "write your email over here"<br>
+					actual_url = url+email_data
+					request_url = requests.get(url)
+					result = request_url.read()
+					print(request_url.text)
+				</p>
+			</div>
+
+			<div id="News" class="tabcontent">
+				<p style="font-size:18.36px;font-style:italic">
+					String urlString = "https://steel-earth-269715.appspot.com/register/";<br>
+					String email_data = "write email here";<br>
+					URL url = new URL(urlString);<br>
+					BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+				</p>
+			</div>
+			<script>
+			function openPage(pageName,elmnt,color) {
+			  var i, tabcontent, tablinks;
+			  tabcontent = document.getElementsByClassName("tabcontent");
+			  for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			  }
+			  tablinks = document.getElementsByClassName("tablink");
+			  for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].style.backgroundColor = "";
+			  }
+			  document.getElementById(pageName).style.display = "block";
+			  elmnt.style.backgroundColor = color;
+			}
+
+			// Get the element with id="defaultOpen" and click on it
+			document.getElementById("defaultOpen").click();
+		</script>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+  arr1=[];
+  {% for city in city_dict %}
+   arr1.push({ y: {{city_dict[city]}}, label: "{{city}}" });
+  {% endfor %}
+
+
+var chart1 = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+
+	title:{
+		text:"Source of Fraud city wise"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Frequency of Frauds"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints:arr1
+	}]
+});
+chart1.render();
+
+}
+
+function funcb1(){
+
+  arr1=[];
+  {% for city in city_dict %}
+   arr1.push({ y: {{city_dict[city]}}, label: "{{city}}" });
+  {% endfor %}
+//document.getElementById("text").value=arr1;
+var chart1 = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+
+	title:{
+		text:"Source of Fraud city wise"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Frequency of Frauds"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints:arr1
+	}]
+});
+chart1.render();
+
+}
+
+function funcb2(){
+
+  arr2=[];
+  {% for state in state_dict %}
+   arr2.push({ y: {{state_dict[state]}}, label: "{{state}}" });
+  {% endfor %}
+
+//document.getElementById("text").value=arr2;
+
+
+var chart2 = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+
+	title:{
+		text:"Source of Fraud state wise"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Frequency of Frauds"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints:arr2
+	}]
+});
+chart2.render();
+
+}
+
+function  funcb3(){
+
+  arr3=[];
+  {% for country in country_dict %}
+  arr3.push({ y: {{country_dict[country]}}, label: "{{country}}" });
+  {% endfor %}
+
+
+
+var chart3 = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+
+	title:{
+		text:"Source of Fraud country wise"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Frequency of Frauds"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints:arr3
+	}]
+});
+chart3.render();
+
+}
+</script>
+</head>
+<body>
+<button onclick="funcb1()">City Data</button>
+<button onclick="funcb2()">State Data</button>
+<button onclick="funcb3()">Country Data</button>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
